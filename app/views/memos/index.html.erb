@@ -1,2 +1,6 @@
 <h1>ここがトップページ</h1>
 <h1>#登録して何かメモを残してみましょう</h1>
+
+<% if user_signed_in? %>
+  <%= current_user.nickname %>
+<% end %>
