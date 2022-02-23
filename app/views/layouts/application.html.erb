@@ -4,9 +4,9 @@
     <title>Easy-Memo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -19,6 +19,7 @@
           </div>
           <% if user_signed_in? %>
             <div class="nav__right">
+              <% #この辺りに検索機能をつくりたい %>
                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
             </div>
           <% else %>
