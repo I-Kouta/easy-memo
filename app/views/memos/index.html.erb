@@ -36,9 +36,11 @@
   <body>
 
 <header>
-  <span>
-    ログインユーザー名:<%= current_user.nickname %>
-  </span>
+  <% if user_signed_in? %>
+    <span>
+      ログインユーザー名:<%= current_user.nickname %>
+    </span>
+  <% end %>
 </header>
 
 <main>
