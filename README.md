@@ -16,10 +16,10 @@
 | Column        | Type        | Options                        |
 | ------------- | ----------- | ------------------------------ |
 | title_history | text        | null: false                    |
-| why_content   | text        | null: false                    |
-| who_content   | text        | null: false                    |
-| what_content  | text        | null: false                    |
-| where_content | text        | null: false                    |
+| why_content   | text        |                                |
+| who_content   | text        |                                |
+| what_content  | text        |                                |
+| where_content | text        |                                |
 | content       | text        | null: false                    |
 | user          | references  | null: false, foreign_key: true |
 
