@@ -34,7 +34,7 @@
     
   </head>
   <body>
-  
+
 <header>
   <span>
     ログインユーザー名:<%= current_user.nickname %>
@@ -47,7 +47,9 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">新しいメモを投稿しましょう</h1>
-        <p class="lead text-muted">脳内の記憶は、1時間で56%、1日で74%、1週間で77%は忘れられる</p>
+        <p class="lead text-muted">
+          脳内の記憶は、1時間で56%、1日で74%、1週間で77%は忘れられる
+        </p>
         <p>
           <a href="#" class="btn btn-primary my-2">メモを追加</a>
         </p>
@@ -55,7 +57,7 @@
     </div>
   </section>
 
-  <% #これが投稿内容1つ分,投稿がない時のみ表示される %>
+  <% #これが投稿内容1つ分,投稿がない時のみ表示される,ログアウト時には遷移できないこと %>
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
