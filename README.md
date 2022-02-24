@@ -18,7 +18,6 @@
 | title_history | text        | null: false                    |
 | why_content   | text        |                                |
 | who_content   | text        |                                |
-| what_content  | text        |                                |
 | where_content | text        |                                |
 | content       | text        | null: false                    |
 | user          | references  | null: false, foreign_key: true |

@@ -1,1 +1,32 @@
-<h2 class="page-heading">新規ページ投稿</h2>
+メモを追加
+<%= form_with model: @memo, local: true do |f|%>
+<%= render 'shared/error_messages', model: f.object %>
+  <div class="field">
+    <%= f.label :title_history, "タイトル(必須)" %><br />
+    <%= f.text_area :title_history, class:"items-text", id:"memo_title", rows:"2" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :why_content, "なぜ書こうと思った？" %><br />
+    <%= f.text_area :why_content, class:"items-text", id:"memo_why_content", rows:"1" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :who_content, "誰の何を見てそう思った？" %><br />
+    <%= f.text_area :who_content, class:"items-text", id:"memo_who_content", rows:"1" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :where_content, "どこでこの話、使えそう？" %><br />
+    <%= f.text_area :where_content, class:"items-text", id:"memo_where_content", rows:"1" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, "メモ内容(必須)" %><br />
+    <%= f.text_area :content, class:"items-text", id:"memo_content", rows:"7" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

@@ -1,5 +1,5 @@
 class Memo < ApplicationRecord
   belongs_to :user
 
-  validates :title, :content, presence: true
+  validates :title_history, :content, presence: true
 end
