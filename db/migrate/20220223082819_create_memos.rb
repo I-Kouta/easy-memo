@@ -4,7 +4,6 @@ class CreateMemos < ActiveRecord::Migration[6.0]
       t.text :title_history, null: false
       t.text :why_content
       t.text :who_content
-      t.text :what_content
       t.text :where_content
       t.text :content,       null: false
       t.references :user,    null: false, foreign_key: true

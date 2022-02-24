@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2022_02_23_082819) do
     t.text "title_history", null: false
     t.text "why_content"
     t.text "who_content"
-    t.text "what_content"
     t.text "where_content"
     t.text "content", null: false
     t.bigint "user_id", null: false
