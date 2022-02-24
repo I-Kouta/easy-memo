@@ -37,7 +37,7 @@ RSpec.describe Memo, type: :model do
       it 'userが紐づいていない' do
         @memo.user = nil
         @memo.valid?
-        expect(@memo.errors.full_messages).to include("User must exist")
+        expect(@memo.errors.full_messages).to include('User must exist')
       end
     end
   end
