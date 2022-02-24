@@ -9,9 +9,9 @@ class MemosController < ApplicationController
   def create
     @memo = Memo.new(memo_params)
     if @memo.save
-      redurect_to root_path
+      redirect_to root_path
     else
-      render:new
+      render :new
     end
   end
 
