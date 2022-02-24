@@ -25,10 +25,19 @@ RSpec.describe Memo, type: :model do
     end
     context 'メモを投稿できない' do
       it 'title_historyが空である' do
+        @memo.title_history = ''
+        @memo.valid?
+        expect(@memo.errors.full_messages).to include("Title history can't be blank")
       end
       it 'contentが空である' do
+        @memo.content = ''
+        @memo.valid?
+        expect(@memo.errors.full_messages).to include("Content can't be blank")
       end
       it 'userが紐づいていない' do
+        @memo.user = nil
+        @memo.valid?
+        expect(@memo.errors.full_messages).to include("User must exist")
       end
     end
   end
