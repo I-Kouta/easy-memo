@@ -62,6 +62,7 @@
   </section>
 
   <% #これが投稿内容1つ分,投稿がない時のみ表示される,ログアウト時には遷移できないこと %>
+  <%# if @memos.count == 0 %>
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -92,6 +93,7 @@
       </div>
     </div>
   </div>
+  <%# end %>
   <% #これが投稿内容1つ分,投稿がない時のみ表示される %>
 
 </main>
