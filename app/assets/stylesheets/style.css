@@ -40,7 +40,6 @@ a {
   background-color: lightgray;
   margin-bottom: 48px;
   padding: 20px 0;
-
 }
 .inner {
   width: 1024px;
@@ -91,22 +90,33 @@ a {
 }
 
 .field{
-  margin: 10px 0;
+  margin: 5px 0;
+  margin-left: 10%;
+}
+
+.items-text {
+  width: 80%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid rgb(24, 19, 19);
+  font-size: 16px;
+  resize: none;
 }
 
 .actions{
   margin-bottom: 40px;
+  margin-left: 10%;
 }
 
 .form__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #fff;
+  color: black;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
+  background: white;
+  border: 1px black solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -119,119 +129,9 @@ a {
 
 /* メイン */
 
-.greeting{
-  margin-bottom: 20px;
-}
-.greeting__link{
-  text-decoration: underline;
-}
-.page-heading {
-  font-size: 30px;
-  margin-bottom: 28px;
-}
-.card__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  min-height: calc(100vh - 161px);
-}
 .card {
   width: calc((100% - 50px) / 3);
   margin-bottom: 40px;
-}
-.card__img {
-  margin-bottom: 16px;
-}
-.card__title {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-.card__summary {
-  font-size: 16px;
-}
-.card__user {
-  display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-  text-decoration: underline;
-}
-
-/* 詳細ページ */
-.prototype__wrapper{
-  min-height: calc(100vh - 161px);
-}
-.prototype__hedding{
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-.prototype__user{
-  display: block;
-  font-size: 16px;
-  color: #999;
-  text-align: center;
-  text-decoration: underline;
-}
-.prototype__image{
-  width: 40%;
-  margin: 0 auto;
-  padding: 16px 0;
-}
-.prototype__detail{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 8px;
-}
-.detail__title{
-  font-size: 20px;
-  font-weight: bold;
-}
-.prototype__manage{
-  display: flex;
-  justify-content: center;
-  padding-top: 16px;
-}
-.prototype__btn{
-  display: block;
-  padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: #999;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #999 solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-  margin: 0 4px;
-}
-.prototype__btn:hover{
-  color: #fff;
-  background: #999;
-}
-
-.prototype__comments{
-  background-color: #f6f6f6;
-  padding: 20px;
-  margin: 28px 0 40px 0;
-}
-
-.comments_lists{
-  padding-left: 20px;
-}
-
-.comments_list{
-  list-style-type: square;
-  padding-bottom: 5px;
-}
-
-.comment_user{
-  font-size: 16px;
-  color: #999;
-  text-decoration: underline;
 }
 
 /* ユーザーページ */
@@ -283,15 +183,10 @@ a {
     width: 90%;
     margin: 0 auto;
   }
-  .page-heading {
-    font-size: 24px;
-  }
+
   .card {
     width: 48%;
     margin-bottom: 40px;
-  }
-  .prototype_image{
-    width: 60%;
   }
 }
 
@@ -300,23 +195,10 @@ a {
   .logo {
     width: 120px;
   }
-  .page-heading {
-    font-size: 20px;
-  }
+  
   .card {
     width: 100%;
     margin-bottom: 60px;
   }
-  .card__title {
-    font-size: 18px;
-  }
-  .card__summary {
-    font-size: 14px;
-  }
-  .prototype_image{
-    width: 100%;
-  }
-  .table{
-    width: 100%;
-  }
+
 }
