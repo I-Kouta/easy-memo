@@ -3,22 +3,22 @@
 <%= render 'shared/error_messages', model: f.object %>
   <div class="field">
     <%= f.label :title_history, "タイトル(必須)" %><br />
-    <%= f.text_area :title_history, class:"items-text", id:"memo_title", rows:"2" %>
+    <%= f.text_area :title_history, class:"items-text", id:"memo_title", rows:"2", placeholder:"タイトルのみ自分以外にも共有されます" %>
   </div>
 
   <div class="field">
     <%= f.label :why_content, "なぜ書こうと思った？" %><br />
-    <%= f.text_area :why_content, class:"items-text", id:"memo_why_content", rows:"1" %>
+    <%= f.text_area :why_content, class:"items-text", id:"memo_why_content", rows:"1", placeholder:"本で読んだ,頭に降ってきたなど" %>
   </div>
 
   <div class="field">
-    <%= f.label :who_content, "誰の何を見てそう思った？" %><br />
-    <%= f.text_area :who_content, class:"items-text", id:"memo_who_content", rows:"1" %>
+    <%= f.label :who_content, "誰を見てそう思った？" %><br />
+    <%= f.text_area :who_content, class:"items-text", id:"memo_who_content", rows:"1", placeholder:"You Tuber,同僚など" %>
   </div>
 
   <div class="field">
     <%= f.label :where_content, "どこでこの話、使えそう？" %><br />
-    <%= f.text_area :where_content, class:"items-text", id:"memo_where_content", rows:"1" %>
+    <%= f.text_area :where_content, class:"items-text", id:"memo_where_content", rows:"1", placeholder:"堅い場では避ける、立場に差がある場合に使える、など" %>
   </div>
 
   <div class="field">
