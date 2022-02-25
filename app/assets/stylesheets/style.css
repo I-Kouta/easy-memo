@@ -62,10 +62,6 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
 }
-.nav__btn:hover{
-  color: #fff;
-  background: #87CEFA;
-}
 
 .nav__logout{
   display: inline-block;
@@ -75,9 +71,6 @@ a {
   text-decoration: none;
   user-select: none;
   border: 1px black solid;
-}
-.nav__logout:hover{
-  opacity: 0.5;
 }
 
 /* フォーム周り */
@@ -122,11 +115,6 @@ a {
   transition: 0.2s ease;
 }
 
-.form__btn:hover {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-}
-
 /* メイン */
 
 .card {
@@ -134,37 +122,10 @@ a {
   margin-bottom: 40px;
 }
 
-/* ユーザーページ */
-.user__wrapper{
-  min-height: calc(100vh - 161px);
+.card-body{
+  background-color: rgb(215, 228, 243);
 }
-.table{
-  border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 50%;
-}
-.table__col1{
-  text-align: left;
-  font-weight: bold;
-  background: #fafafa;
-  border-collapse: collapse;
-  border: 1px solid #f5f5f5;
-  width: 30%;
-  padding: 8px;
-}
-.table__col2{
-  text-align: left;
-  border: 1px solid #f5f5f5;
-  border-collapse: collapse;
-  width: 70%;
-  padding: 16px 8px;
-}
-.user__card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
+
 /* フッター */
 
 .footer {
