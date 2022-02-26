@@ -35,6 +35,13 @@ class MemosController < ApplicationController
   end
 
   def destroy
+    memo = Memo.find(params[:id])
+    if user_signed_in? && (current_user.id == memo.user_id)
+      memo.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   private
