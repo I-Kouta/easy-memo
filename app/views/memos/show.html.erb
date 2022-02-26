@@ -14,7 +14,7 @@
             <%= link_to "内容を編集する", edit_memo_path(@memo.id), method: :get %>
           </button>
           <button type="button" class="btn btn-sm btn-outline-secondary">
-            削除
+            <%= link_to "内容を削除する", memo_path(@memo.id), method: :delete %>
           </button>
         </div>
             by <%= @memo.user.nickname%>

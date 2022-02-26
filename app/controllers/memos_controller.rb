@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :memo_info, only: [:show, :edit, :update]
 
   def index
@@ -31,6 +31,16 @@ class MemosController < ApplicationController
       redirect_to root_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    memo = Memo.find(params[:id])
+    if user_signed_in? && (current_user.id == memo.user_id)
+      memo.destroy
+      redirect_to root_path
+    else
+      render :show
     end
   end
 
