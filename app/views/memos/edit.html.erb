@@ -1,5 +1,5 @@
-メモを追加
-<%= form_with model: @memo, url: "/memos", local: true do |f|%>
+メモを編集
+<%= form_with model: @memo, local: true do |f|%>
 <%= render 'shared/error_messages', model: f.object %>
   <div class="field">
     <%= f.label :title_history, "タイトル(必須)" %><br />
@@ -27,6 +27,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
+    <%= f.submit "編集完了", class: :form__btn %>
+    <%=link_to 'もどる', memo_path(@memo.id), class: :form__btn %>
   </div>
 <% end %>

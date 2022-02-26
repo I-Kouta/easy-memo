@@ -1,0 +1,32 @@
+<div class="py-3 bg-light">
+  <div class="container">
+    <div class="row-cols-md-3">
+      <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
+        <text x="50%" y="50%" fill="white" dy=".3em">
+          <%= @memo.title_history%>
+        </text>
+      </svg>
+      
+      <% if current_user.id == @memo.user_id %>
+      <div class="card-body">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+            <%= link_to "内容を編集する", edit_memo_path(@memo.id), method: :get %>
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+            削除
+          </button>
+        </div>
+            by <%= @memo.user.nickname%>
+      </div>
+      <% else %>
+      <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="rgb(217, 248, 247)"/>
+        <text x="50%" y="50%" fill="black" dy=".3em">
+          ※投稿者本人以外は閲覧できません※
+        </text>
+      </svg>
+      <% end %>
+
+    </div>
+  </div>
+</div>
