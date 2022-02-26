@@ -15,6 +15,9 @@ class MemosController < ApplicationController
     else
       render :new
     end
+
+    def edit
+    end
   end
 
   private
