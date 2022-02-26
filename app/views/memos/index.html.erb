@@ -59,32 +59,34 @@
     </div>
   </section>
 
-  <div class="main">
-    <% @memos.each do |memo| %>
-      <div class="py-3 bg-light">
-        <div class="container">
-          <div class="row-cols-md-3">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
-              <text x="50%" y="50%" fill="white" dy=".3em">
-                <%= memo.title_history%>
-              </text>
-            </svg>
-            <div class="card-body">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">
-                  詳細/編集
-                </button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">
-                削除
-                </button>
+  <% if user_signed_in? %>
+    <div class="main">
+      <% @memos.each do |memo| %>
+        <div class="py-3 bg-light">
+          <div class="container">
+            <div class="row-cols-md-3">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
+                <text x="50%" y="50%" fill="white" dy=".3em">
+                  <%= memo.title_history%>
+                </text>
+              </svg>
+              <div class="card-body">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    詳細/編集
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    削除
+                  </button>
+                </div>
+                  by <%= memo.user.nickname%>
               </div>
-                by <%= memo.user.nickname%>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 
 <footer class="text-muted py-5">
   <div class="container">
