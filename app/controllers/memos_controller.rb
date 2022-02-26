@@ -34,6 +34,9 @@ class MemosController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
 
   def memo_params
