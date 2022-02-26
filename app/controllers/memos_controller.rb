@@ -1,6 +1,5 @@
 class MemosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :move_to_index, only: [:edit]
   before_action :memo_info, only: [:show, :edit, :update]
 
   def index
@@ -18,15 +17,20 @@ class MemosController < ApplicationController
     else
       render :new
     end
-
-    def show
-    end
-
-    def edit
-      redirect_to action: :index if current_user.id != @memo.user_id
-    end
-
-    def update
+  end
+  
+  def show
+  end
+  
+  def edit
+    redirect_to action: :index if current_user.id != @memo.user_id
+  end
+  
+  def update
+    if @memo.update(memo_params)
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 
