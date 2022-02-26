@@ -62,25 +62,27 @@
   <% if user_signed_in? %>
     <div class="main">
       <% @memos.each do |memo| %>
-        <div class="py-3 bg-light">
-          <div class="container">
-            <div class="row-cols-md-3">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
-                <text x="50%" y="50%" fill="white" dy=".3em">
-                  <%= memo.title_history%>
-                </text>
-              </svg>
-              <div class="card-body">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">
-                    <%= link_to "詳細へ", memo_path(memo.id) %>
-                  </button>
-                </div>
+        <% if current_user.id == memo.user_id %>
+          <div class="py-3 bg-light">
+            <div class="container">
+              <div class="row-cols-md-3">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
+                  <text x="50%" y="50%" fill="white" dy=".3em">
+                    <%= memo.title_history%>
+                  </text>
+                </svg>
+                <div class="card-body">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                      <%= link_to "詳細へ", memo_path(memo.id) %>
+                    </button>
+                  </div>
                   by <%= memo.user.nickname%>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   <% end %>
