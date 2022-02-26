@@ -1,7 +1,7 @@
 class MemosController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :move_to_index, only: [:edit]
-  before_action :memo_info, only: [:edit, :update]
+  before_action :memo_info, only: [:show, :edit, :update]
 
   def index
     @memos = Memo.includes(:user).order('created_at DESC')
@@ -19,7 +19,11 @@ class MemosController < ApplicationController
       render :new
     end
 
+    def show
+    end
+
     def edit
+      redirect_to action: :index if current_user.id != @memo.user_id
     end
 
     def update
@@ -35,10 +39,6 @@ class MemosController < ApplicationController
   
   def memo_info
     @memo = Memo.find(params[:id])
-  end
-  
-  def move_to_index
-    redirect_to action: :index if current_user.id != @memo.user_id
   end
 
 end
