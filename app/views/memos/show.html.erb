@@ -11,7 +11,7 @@
       <div class="card-body">
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-outline-secondary">
-            編集する
+            <%= link_to "内容を編集する", edit_memo_path(@memo.id), method: :get %>
           </button>
           <button type="button" class="btn btn-sm btn-outline-secondary">
             削除
