@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :memo_info, only: [:show, :edit, :update]
 
   def index
