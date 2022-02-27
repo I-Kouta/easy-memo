@@ -74,7 +74,10 @@
                 <div class="card-body">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary">
-                      <%= link_to "詳細へ", memo_path(memo.id) %>
+                      <%= link_to "詳細/編集", edit_memo_path(memo.id) %>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                      <%= link_to "内容の削除", memo_path(memo.id), method: :delete %>
                     </button>
                   </div>
                   by <%= memo.user.nickname%>
