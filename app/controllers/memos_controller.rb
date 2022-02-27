@@ -1,6 +1,6 @@
 class MemosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :memo_info, only: [:show, :edit, :update]
+  before_action :memo_info, only: [:edit, :update]
 
   def index
     @memos = Memo.includes(:user).order('created_at DESC')
@@ -17,9 +17,6 @@ class MemosController < ApplicationController
     else
       render :new
     end
-  end
-  
-  def show
   end
   
   def edit
@@ -39,8 +36,6 @@ class MemosController < ApplicationController
     if user_signed_in? && (current_user.id == memo.user_id)
       memo.destroy
       redirect_to root_path
-    else
-      render :show
     end
   end
 
