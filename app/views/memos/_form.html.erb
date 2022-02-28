@@ -1,4 +1,5 @@
-<%= form_with model: @memo, local: true do |f|%>
+<%# 新規投稿/編集ページ %>
+<%= form_with model: @memo, local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
     <div class="field">
       <%= f.label :title_history, "タイトル(必須)" %><br />
