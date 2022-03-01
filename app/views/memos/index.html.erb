@@ -60,7 +60,7 @@
     </div>
   </section>
 
-  <% if user_signed_in? %>
+  <% if @memos.count == 0 %>
     <%= render partial: "memo" %>
   <% else %>
     <div class="main">
