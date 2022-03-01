@@ -19,11 +19,7 @@
           </div>
           <% if user_signed_in? %>
             <div class="nav__right">
-              <%= form_with(url: search_memos_path, local: true, method: :get, class: "search-form") do |form| %>
-                <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
-                <%= form.submit "検索", class: "nav__btn" %>
-              <% end %>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
             </div>
           <% else %>
             <div class="nav__right">
