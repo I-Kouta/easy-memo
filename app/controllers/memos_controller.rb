@@ -41,6 +41,7 @@ class MemosController < ApplicationController
 
   def search
     @memos = Memo.search(params[:keyword])
+    #redirect_to action: :index if current_user.id != @memos.user_id
     if params[:keyword] == ""
       render :index
     end
