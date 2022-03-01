@@ -18,11 +18,11 @@ class MemosController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     redirect_to action: :index if current_user.id != @memo.user_id
   end
-  
+
   def update
     if @memo.update(memo_params)
       redirect_to root_path
@@ -41,10 +41,8 @@ class MemosController < ApplicationController
 
   def search
     @memos = Memo.search(params[:keyword])
-    #redirect_to action: :index if current_user.id != @memos.user_id
-    if params[:keyword] == ""
-      render :index
-    end
+    # redirect_to action: :index if current_user.id != @memos.user_id
+    render :index if params[:keyword] == ''
   end
 
   private
@@ -53,9 +51,8 @@ class MemosController < ApplicationController
     params.require(:memo).permit(:title_history, :why_content, :who_content, :what_content, :where_content,
                                  :content).merge(user_id: current_user.id)
   end
-  
+
   def memo_info
     @memo = Memo.find(params[:id])
   end
-
 end
