@@ -16,7 +16,7 @@
 
 <% if @memos.count != 0 %>
   <%= link_to "トップページに戻る", root_path, class: :form__btn  %>
-  <%= "検索結果一覧" %>
+  <%= "検索結果 : #{@memos.count}件" %>
 <% else %>
   <%= link_to "検索結果はありません", root_path, class: :form__btn  %>
 <% end %>
