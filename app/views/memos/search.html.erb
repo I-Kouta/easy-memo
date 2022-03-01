@@ -1,0 +1,22 @@
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    }
+    
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+</style>
+
+<% if @memos.count != 0 %>
+  <%= link_to "トップページに戻る", root_path, class: :form__btn  %>
+  <%= render partial: "memo" %>
+<% else %>
+  <%= link_to "検索結果はありません", root_path, class: :form__btn  %>
+<% end %>

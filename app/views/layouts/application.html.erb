@@ -19,8 +19,7 @@
           </div>
           <% if user_signed_in? %>
             <div class="nav__right">
-              <% #この辺りに検索機能をつくりたい %>
-               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
             </div>
           <% else %>
             <div class="nav__right">
