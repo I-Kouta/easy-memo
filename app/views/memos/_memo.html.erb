@@ -17,7 +17,7 @@
                     <%= "詳細/編集" %>
                   </button>
                 <% end %>
-                <%= link_to memo_path(memo.id), method: :delete do %>
+                <%= link_to memo_path(memo.id), method: :delete, data: {confirm: "削除しますか？"} do %>
                   <button type="button" class="btn btn-sm btn-outline-secondary">
                     <%= "内容の削除" %>
                   </button>
