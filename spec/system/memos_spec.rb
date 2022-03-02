@@ -6,13 +6,13 @@ def basic_pass
   visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}"
 end
 
-RSpec.describe "メモ投稿", type: :system do
+RSpec.describe 'メモ投稿', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @memo_title_history = Faker::Lorem.sentence
     @memo_content = Faker::Lorem.sentence
   end
-  
+
   context 'メモが投稿できる' do
     it 'ログインしたユーザーはメモを投稿できる' do
       # basic認証の実行
@@ -29,9 +29,9 @@ RSpec.describe "メモ投稿", type: :system do
       fill_in 'タイトル(必須)', with: @memo_title_history
       fill_in 'メモ内容(必須)', with: @memo_content
       # Memoモデルのカウントが1上がることを確認
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { Memo.count }.by(1)
+      end.to change { Memo.count }.by(1)
       # トップページに遷移することを確認
       expect(current_path).to eq(root_path)
       # トップページに投稿したメモが存在していることを確認
@@ -51,7 +51,7 @@ RSpec.describe "メモ投稿", type: :system do
   end
 end
 
-RSpec.describe "メモ編集", type: :system do
+RSpec.describe 'メモ編集', type: :system do
   before do
     @memo1 = FactoryBot.create(:memo)
     @memo2 = FactoryBot.create(:memo)
@@ -89,16 +89,16 @@ RSpec.describe "メモ編集", type: :system do
       fill_in 'memo_where_content', with: "#{@memo1.where_content}+編集したシチュエーション"
       fill_in 'memo_content', with: "#{@memo1.content}+編集した内容"
       # 編集してもMemoモデルのカウントは変わらないことを確認
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { Memo.count }.by(0)
+      end.to change { Memo.count }.by(0)
       # トップページに遷移
       expect(current_path).to eq(root_path)
       # トップページに変更した内容のメモ1のタイトルが存在していることを確認
       expect(page).to have_content("#{@memo1.title_history}+編集したタイトル")
     end
   end
-  
+
   context 'メモ編集ができない' do
     it '自分以外のメモは編集ができない' do
       # basic認証の実行
@@ -106,7 +106,7 @@ RSpec.describe "メモ編集", type: :system do
       # メモ1を投稿したユーザーでログイン
       sign_in(@memo1.user)
       # メモ2がビューに表示されていないことを確認
-      expect(page).to have_no_content("#{@memo2.title_history}")
+      expect(page).to have_no_content(@memo2.title_history.to_s)
     end
     it 'ログインしていないとメモ編集画面に遷移できない' do
       # basic認証の実行
@@ -115,13 +115,13 @@ RSpec.describe "メモ編集", type: :system do
       visit root_path
       # メモ1が表示されていないことを確認
       # メモ2が表示されていないことを確認
-      expect(page).to have_no_content("#{@memo1}")
-      expect(page).to have_no_content("#{@memo2}")
+      expect(page).to have_no_content(@memo1.to_s)
+      expect(page).to have_no_content(@memo2.to_s)
     end
   end
 end
 
-RSpec.describe "メモ削除", type: :system do
+RSpec.describe 'メモ削除', type: :system do
   before do
     @memo1 = FactoryBot.create(:memo)
     @memo2 = FactoryBot.create(:memo)
@@ -137,15 +137,15 @@ RSpec.describe "メモ削除", type: :system do
       # expect(page).to have_link '内容の削除', href: memo_path(@memo1)
       # 削除するとレコードの数が1減ることを確認
       # expect{
-        # find_link('内容の削除', href: memo_path(@memo1)).click
-        # }.to change { Memo.count }.by(-1)
+      # find_link('内容の削除', href: memo_path(@memo1)).click
+      # }.to change { Memo.count }.by(-1)
       # トップページに遷移
       # expect(current_path).to eq(root_path)
       # トップページにメモ1が存在していないことを確認
       # expect(page).to have_no_content("#{@memo1}")
     end
   end
-  
+
   context 'メモが削除できない' do
     it 'ログインしても自分以外のメモは削除できない' do
       # basic認証の実行
@@ -153,7 +153,7 @@ RSpec.describe "メモ削除", type: :system do
       # メモ2を投稿したユーザーでログイン
       sign_in(@memo2.user)
       # メモ1が表示されていないことを確認
-      expect(page).to have_no_content("#{@memo1}")
+      expect(page).to have_no_content(@memo1.to_s)
     end
     it 'ログインしていないとメモは削除できない' do
       # basic認証の実行
@@ -162,8 +162,8 @@ RSpec.describe "メモ削除", type: :system do
       visit root_path
       # メモ1が表示されていないことを確認
       # メモ2が表示されていないことを確認
-      expect(page).to have_no_content("#{@memo1}")
-      expect(page).to have_no_content("#{@memo2}")
+      expect(page).to have_no_content(@memo1.to_s)
+      expect(page).to have_no_content(@memo2.to_s)
     end
   end
 end
