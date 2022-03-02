@@ -28,8 +28,11 @@ RSpec.describe "メモ投稿", type: :system do
   context 'メモが投稿できない' do
     it 'ログインしていないと投稿ページに遷移できない' do
       # basic認証の実行
+      basic_pass
       # トップページに遷移(ログインしていない)
+      visit root_path
       # メモ投稿へのボタンがないことを確認
+      expect(page).to have_no_content('メモを投稿しましょう')
     end
   end
 
