@@ -48,8 +48,34 @@ RSpec.describe "ユーザー新規登録", type: :system do
       expect{
         find('input[name="commit"]').click
       }.to change { User.count }.by(0)
-      #新規登録ページに止まっていることを確認する
+      #新規登録ページから遷移しないことを確認
       expect(current_path).to eq user_registration_path
+    end
+  end
+
+  RSpec.describe 'ログイン', type: :system do
+    before do
+      @user = FactoryBot.create(:user)
+    end
+
+    context 'ログインできる' do
+      #トップページに遷移
+      #ログインボタンがあることを確認
+      #ログインページに遷移
+      #正しいユーザー情報を入力
+      #ログインボタンを押す
+      #トップページに遷移したことを確認
+      #ログアウトボタンが表示されていることを確認
+      #ログイン・新規登録ボタンが表示されていないことを確認
+    end
+
+    context 'ログインできない' do
+      #トップページに遷移
+      #ログインボタンがあることを確認
+      #ログインページに遷移
+      #誤ったユーザー情報を入力
+      #ログインボタンを押す
+      #ログインページから遷移しないことを確認
     end
   end
 end
