@@ -114,9 +114,37 @@ RSpec.describe "メモ編集", type: :system do
       # トップページに遷移(ログインしていない)
       visit root_path
       # メモ1が表示されていないことを確認
-      expect(page).to have_no_content("#{@memo1}")
       # メモ2が表示されていないことを確認
+      expect(page).to have_no_content("#{@memo1}")
       expect(page).to have_no_content("#{@memo2}")
+    end
+  end
+end
+
+RSpec.describe "メモ削除", type: :system do
+  before do
+    @memo1 = FactoryBot.create(:memo)
+    @memo2 = FactoryBot.create(:memo)
+  end
+  context 'メモが削除できる' do
+    it 'ログインしているユーザーは自身のメモを削除できる' do
+      # メモ1を投稿したユーザーでログイン
+      # メモ1に削除ボタンがあることを確認
+      # 削除するとレコードの数が1減ることを確認
+      # トップページに遷移
+      # トップページにメモ1が存在していないことを確認
+    end
+  end
+
+  context 'メモが削除できない' do
+    it 'ログインしても自分以外のメモは削除できない' do
+      # メモ2を投稿したユーザーでログイン
+      # メモ1が表示されていないことを確認
+    end
+    it 'ログインしていないとメモは削除できない' do
+      # トップページに遷移(ログインしていない)
+      # メモ1が表示されていないことを確認
+      # メモ2が表示されていないことを確認
     end
   end
 end
