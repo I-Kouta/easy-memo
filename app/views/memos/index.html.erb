@@ -53,9 +53,11 @@
         <p class="lead text-muted">
           ここにも何かメモしたくないですか？
         </p>
+        <% if user_signed_in? %>
         <p>
           <%= link_to "メモを投稿しましょう", new_memo_path, class: :form__btn  %>
         </p>
+        <% end %>
       </div>
     </div>
   </section>
