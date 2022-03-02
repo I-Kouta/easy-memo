@@ -58,6 +58,8 @@ RSpec.describe "メモ編集", type: :system do
   end
   context 'メモ編集ができる' do
     it 'ログインしているユーザーは自身のメモの編集が可能' do
+      # basic認証の実行
+      basic_pass
       # メモ1を投稿したユーザーでログイン
       sign_in(@memo1.user)
       # メモ1の詳細/編集ボタンがあることを確認
@@ -99,13 +101,22 @@ RSpec.describe "メモ編集", type: :system do
   
   context 'メモ編集ができない' do
     it '自分以外のメモは編集ができない' do
+      # basic認証の実行
+      basic_pass
       # メモ1を投稿したユーザーでログイン
+      sign_in(@memo1.user)
       # メモ2がビューに表示されていないことを確認
+      expect(page).to have_no_content("#{@memo2.title_history}")
     end
     it 'ログインしていないとメモ編集画面に遷移できない' do
+      # basic認証の実行
+      basic_pass
       # トップページに遷移(ログインしていない)
+      visit root_path
       # メモ1が表示されていないことを確認
+      expect(page).to have_no_content("#{@memo1}")
       # メモ2が表示されていないことを確認
+      expect(page).to have_no_content("#{@memo2}")
     end
   end
 end

@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :memo do
-    title_history              { 'タイトル' }
-    why_content              { 'なぜ書こうと思ったのか' }
-    who_content              { '誰をみてその話をひらめいたのか' }
-    where_content              { 'どこでその話を使うか' }
-    content { '具体的な内容' }
+    title_history { Faker::Lorem.sentence }
+    why_content   { Faker::Lorem.sentence }
+    who_content   { Faker::Lorem.sentence }
+    where_content { Faker::Lorem.sentence }
+    content       { Faker::Lorem.sentence }
     association :user
   end
 end
