@@ -85,11 +85,18 @@ RSpec.describe 'ログイン', type: :system do
   context 'ログインできない' do
     it '保存されているユーザーの情報と一致しないとログインができない' do
       #トップページに遷移
+      visit root_path
       #ログインボタンがあることを確認
+      expect(page).to have_content("ログイン")
       #ログインページに遷移
+      visit new_user_session_path
       #誤ったユーザー情報を入力
+      fill_in 'Email', with: ''
+      fill_in 'Password', with: ''
       #ログインボタンを押す
+      find('input[name="commit"]').click
       #ログインページから遷移しないことを確認
+      expect(current_path).to eq new_user_session_path
     end
   end
 end
