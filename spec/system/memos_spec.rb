@@ -59,13 +59,41 @@ RSpec.describe "メモ編集", type: :system do
   context 'メモ編集ができる' do
     it 'ログインしているユーザーは自身のメモの編集が可能' do
       # メモ1を投稿したユーザーでログイン
-      # メモ1に編集画面へのリンクがあることを確認
+      sign_in(@memo1.user)
+      # メモ1の詳細/編集ボタンがあることを確認
+      expect(page).to have_content('詳細/編集')
       # 編集ページへ遷移
+      visit edit_memo_path(@memo1)
       # メモの内容がフォームに残っていることを確認
+      expect(
+        find('#memo_title_history').value
+      ).to eq(@memo1.title_history)
+      expect(
+        find('#memo_why_content').value
+      ).to eq(@memo1.why_content)
+      expect(
+        find('#memo_who_content').value
+      ).to eq(@memo1.who_content)
+      expect(
+        find('#memo_where_content').value
+      ).to eq(@memo1.where_content)
+      expect(
+        find('#memo_content').value
+      ).to eq(@memo1.content)
       # 内容を編集
+      fill_in 'memo_title_history', with: "#{@memo1.title_history}+編集したタイトル"
+      fill_in 'memo_why_content', with: "#{@memo1.why_content}+編集したキッカケ"
+      fill_in 'memo_who_content', with: "#{@memo1.who_content}+編集した人物"
+      fill_in 'memo_where_content', with: "#{@memo1.where_content}+編集したシチュエーション"
+      fill_in 'memo_content', with: "#{@memo1.content}+編集した内容"
       # 編集してもMemoモデルのカウントは変わらないことを確認
+      expect{
+        find('input[name="commit"]').click
+      }.to change { Memo.count }.by(0)
       # トップページに遷移
+      expect(current_path).to eq(root_path)
       # トップページに変更した内容のメモ1のタイトルが存在していることを確認
+      expect(page).to have_content("#{@memo1.title_history}+編集したタイトル")
     end
   end
   
