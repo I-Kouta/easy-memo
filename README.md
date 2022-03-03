@@ -51,9 +51,13 @@ https://docs.google.com/spreadsheets/d/134-pvNJ8EpMJWEtg41QtllEGLCy-OBQCXLqi7b11
 
 # 開発環境
 ・フロントエンド
+
 ・バックエンド
+
 ・インフラ
+
 ・テスト
+
 ・テキストエディタ
 
 # ローカルでの動作方法
