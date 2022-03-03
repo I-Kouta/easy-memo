@@ -1,26 +1,29 @@
-# テーブル設計
+# アプリケーション名
 
-## users テーブル
+# アプリケーション概要
 
-| Column             | Type    | Options                   |
-| ------------------ | ------- | ------------------------- |
-| nickname           | string  | null: false               |
-| email              | string  | null: false, unique: true |
-| encrypted_password | string  | null: false               |
+# URL
 
-### Association
-- has_many :memos
+# テスト用アカウント
 
-## memos テーブル
+# 利用方法
 
-| Column        | Type        | Options                        |
-| ------------- | ----------- | ------------------------------ |
-| title_history | text        | null: false                    |
-| why_content   | text        |                                |
-| who_content   | text        |                                |
-| where_content | text        |                                |
-| content       | text        | null: false                    |
-| user          | references  | null: false, foreign_key: true |
+## ここに方法を表示
 
-### Association
-- belongs_to :user
+# アプリケーションを作成した背景
+
+# 洗い出した要件
+
+# 実装した機能についての説明
+
+# 実装予定の機能
+
+# データベース設計
+
+# 画面遷移図
+
+# 開発環境
+
+# ローカルでの動作方法
+
+# 工夫したポイント
