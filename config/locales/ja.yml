@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      memo:
+        title_history: タイトル
+        content: メモ内容
+        user: ユーザー
