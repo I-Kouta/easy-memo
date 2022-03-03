@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="_v8-Nn0gUawXAkiILY20" name="ページ1">
-        <mxGraphModel dx="633" dy="667" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="595" dy="667" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -16,7 +16,7 @@
                         <mxPoint x="280" y="80" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="6" value="メモ一覧/投稿" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="6" value="メモ投稿" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="240" y="40" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
