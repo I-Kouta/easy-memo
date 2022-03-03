@@ -22,7 +22,7 @@ RSpec.describe 'メモ投稿', type: :system do
       # トップページに遷移していることを確認
       expect(current_path).to eq(root_path)
       # メモ投稿へのボタンがあることを確認
-      expect(page).to have_content('メモを投稿しましょう')
+      expect(page).to have_content('メモを投稿する')
       # メモ投稿ページへ移動
       visit new_memo_path
       # 内容を入力
@@ -46,7 +46,7 @@ RSpec.describe 'メモ投稿', type: :system do
       # トップページに遷移(ログインしていない)
       visit root_path
       # メモ投稿へのボタンがないことを確認
-      expect(page).to have_no_content('メモを投稿しましょう')
+      expect(page).to have_no_content('メモを投稿する')
     end
   end
 end

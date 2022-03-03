@@ -1,26 +1,66 @@
-# テーブル設計
+# アプリケーション名
+Easy-Memo
 
-## users テーブル
+# アプリケーション概要
+アウトプットを前提としたフォーマットにすることで、ただ文字として残すだけでなく実務に役立つように記録として残すことができる
 
-| Column             | Type    | Options                   |
-| ------------------ | ------- | ------------------------- |
-| nickname           | string  | null: false               |
-| email              | string  | null: false, unique: true |
-| encrypted_password | string  | null: false               |
+# URL
+ https://easy-memo.herokuapp.com/
 
-### Association
-- has_many :memos
+# テスト用アカウント
+・Basic認証パスワード: edge
 
-## memos テーブル
+・Basic認証ID: 0222
 
-| Column        | Type        | Options                        |
-| ------------- | ----------- | ------------------------------ |
-| title_history | text        | null: false                    |
-| why_content   | text        |                                |
-| who_content   | text        |                                |
-| where_content | text        |                                |
-| content       | text        | null: false                    |
-| user          | references  | null: false, foreign_key: true |
+# 利用方法
+## メモの投稿
+1.トップページから新規登録を行う
 
-### Association
-- belongs_to :user
+2.ログイン状態で「メモを投稿する」を選択し、項目を入力して投稿する
+
+## メモの編集
+1.ログイン状態で操作を行いたいメモの「詳細/編集」を選択し、項目の編集を行う
+
+## メモの検索
+1.ログイン状態で、ユーザー名の下部に表示されている検索欄に、検索した単語を入力する
+
+2.該当する単語を含んでいるメモが表示され、詳細の表示および編集を行う
+
+# アプリケーションを作成した背景
+・就職活動に関連するメモや本で読んで心に残ったメッセージなど、今後も見直して学びがありそうな内容を書いたにも関わらず、何も指定がない空欄に書き始めるのは大変であり、問題であると考えた。メモの内容以外に、「なぜメモにしようと思ったのか」「誰に伝えるのか」などをあらかじめ用意しておくことで解決がされると考えた。他者との交流を図る機能に関しては、メモの内容との相性を考えて実装をしていない。
+・誰にでも発信ができるようになった一方、誰にも見られないことが約束されているメモ帳は必要としている人が多いと思い、今回のアプリを実装した。
+
+# 洗い出した要件
+https://docs.google.com/spreadsheets/d/134-pvNJ8EpMJWEtg41QtllEGLCy-OBQCXLqi7b114EQ/edit#gid=982722306
+
+# 実装した機能についての説明
+・新規メモを投稿する際にはトップページに表示されるタイトルと、具体的な内容のみを必須項目として実装を行った。
+
+[![Image from Gyazo](https://i.gyazo.com/b1c9d0ba36f78495ce88fc1315703780.png)](https://gyazo.com/b1c9d0ba36f78495ce88fc1315703780)
+
+
+# 実装予定の機能
+・新規登録、メモ投稿の際のエラーメッセージの日本語にする機能を実装中。
+・削除時の確認ダイアログは既に実装されており、この操作を行う結合テストコードを行う予定。
+
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/5881012fe60273c799da808dbcb26db4.png)](https://gyazo.com/5881012fe60273c799da808dbcb26db4)
+
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/23b93003adc01db8488369c092210245.png)](https://gyazo.com/23b93003adc01db8488369c092210245)
+
+# 開発環境
+・フロントエンド
+・バックエンド
+・インフラ
+・テスト
+・テキストエディタ
+
+# ローカルでの動作方法
+・以下のコマンドを順に実行。
+% git clone https://github.com/I-Kouta/easy-memo.git
+% bundle install
+% yarn install
+
+# 工夫したポイント
+・これまで学んだことに加えて、不便に感じたことを今回の実装で実現しました。投稿した内容自体が本人にしか内容が表示されない、削除はワンクリックで行われず確認のダイアログが表示されるようになっています。
