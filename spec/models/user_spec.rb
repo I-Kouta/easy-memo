@@ -20,12 +20,12 @@ RSpec.describe User, type: :model do
       it 'ニックネームが入力されていない' do
         @user.nickname = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
       it 'emailが入力されていない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Eメールを入力してください")
+        expect(@user.errors.full_messages).to include('Eメールを入力してください')
       end
       it 'emailが重複している' do
         @user.save
@@ -43,7 +43,7 @@ RSpec.describe User, type: :model do
         @user.password = ''
         @user.password_confirmation = '111aaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
       it 'passwordが5文字以下である' do
         @user.password = '11aaa'
@@ -73,7 +73,7 @@ RSpec.describe User, type: :model do
         @user.password = '111aaa'
         @user.password_confirmation = '211aaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
     end
   end

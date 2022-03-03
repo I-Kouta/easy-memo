@@ -27,12 +27,12 @@ RSpec.describe Memo, type: :model do
       it 'title_historyが空である' do
         @memo.title_history = ''
         @memo.valid?
-        expect(@memo.errors.full_messages).to include("タイトルを入力してください")
+        expect(@memo.errors.full_messages).to include('タイトルを入力してください')
       end
       it 'contentが空である' do
         @memo.content = ''
         @memo.valid?
-        expect(@memo.errors.full_messages).to include("メモ内容を入力してください")
+        expect(@memo.errors.full_messages).to include('メモ内容を入力してください')
       end
       it 'userが紐づいていない' do
         @memo.user = nil
