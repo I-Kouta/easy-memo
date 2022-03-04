@@ -22,10 +22,10 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # 新規登録ページに遷移
       visit new_user_registration_path
       # ユーザー情報を入力
-      fill_in 'Nickname', with: @user.nickname
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
-      fill_in 'Password confirmation', with: @user.password_confirmation
+      fill_in 'ニックネーム', with: @user.nickname
+      fill_in 'Eメール', with: @user.email
+      fill_in 'パスワード', with: @user.password
+      fill_in 'パスワード（確認用）', with: @user.password_confirmation
       # サインアップボタンを押すとユーザーモデルのカウントが1上がる
       expect  do
         find('input[name="commit"]').click
@@ -50,10 +50,10 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # 新規登録ページに遷移
       visit new_user_registration_path
       # ユーザー情報を入力
-      fill_in 'Nickname', with: ''
-      fill_in 'Email', with: ''
-      fill_in 'Password', with: ''
-      fill_in 'Password confirmation', with: ''
+      fill_in 'ニックネーム', with: ''
+      fill_in 'Eメール', with: ''
+      fill_in 'パスワード', with: ''
+      fill_in 'パスワード（確認用）', with: ''
       # サインアップボタンを押してもユーザーモデルのカウントが上がらない
       expect  do
         find('input[name="commit"]').click
@@ -80,8 +80,8 @@ RSpec.describe 'ログイン', type: :system do
       # ログインページに遷移
       visit new_user_session_path
       # 正しいユーザー情報を入力
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'Eメール', with: @user.email
+      fill_in 'パスワード', with: @user.password
       # ログインボタンを押す
       find('input[name="commit"]').click
       # トップページに遷移したことを確認
@@ -105,8 +105,8 @@ RSpec.describe 'ログイン', type: :system do
       # ログインページに遷移
       visit new_user_session_path
       # 誤ったユーザー情報を入力
-      fill_in 'Email', with: ''
-      fill_in 'Password', with: ''
+      fill_in 'Eメール', with: ''
+      fill_in 'パスワード', with: ''
       # ログインボタンを押す
       find('input[name="commit"]').click
       # ログインページから遷移しないことを確認
