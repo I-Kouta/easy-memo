@@ -141,7 +141,7 @@ RSpec.describe 'メモ削除', type: :system do
       # トップページに遷移
       expect(current_path).to eq(root_path)
       # トップページにメモ1が存在していないことを確認
-      expect(page).to have_no_content("#{@memo1}")
+      expect(page).to have_no_content(@memo1.to_s)
     end
   end
 
