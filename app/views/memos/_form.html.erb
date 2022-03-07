@@ -22,7 +22,8 @@
     </div>
 
     <div class="field">
-      <%= f.label :content, "メモ内容(必須)" %><br />
+      <%= f.label :content, "メモ内容(必須)" %>
+      <div id = "char_num">0文字</div>
       <%= f.text_area :content, class:"items-text", id:"memo_content", rows:"7" %>
     </div>
 
