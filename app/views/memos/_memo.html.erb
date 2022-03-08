@@ -1,3 +1,4 @@
+<%= paginate @memos %>
 <div class="main">
   <% @memos.each do |memo| %>
     <% if current_user.id == memo.user_id %>
