@@ -1,4 +1,3 @@
-<%# ビューに表示されているメモ %>
 <div class="main">
   <% @memos.each do |memo| %>
     <% if current_user.id == memo.user_id %>
