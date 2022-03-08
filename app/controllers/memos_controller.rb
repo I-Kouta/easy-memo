@@ -3,8 +3,7 @@ class MemosController < ApplicationController
   before_action :memo_info, only: [:edit, :update]
 
   def index
-    @memos = Memo.includes(:user).order('created_at DESC')
-    @memo = Memo.page(params[:page]).per(2)
+    @memos = Memo.includes(:user).order('created_at DESC').page(params[:page]).per(2)
   end
 
   def new
