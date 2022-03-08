@@ -4,6 +4,7 @@ class MemosController < ApplicationController
 
   def index
     @memos = Memo.includes(:user).order('created_at DESC')
+    @memo = Memo.page(params[:page]).per(2)
   end
 
   def new
