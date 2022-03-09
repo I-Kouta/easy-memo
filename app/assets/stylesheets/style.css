@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: rgb(239, 255, 255);
+  background-image: url(b006.gif);
   margin-bottom: 48px;
   padding: 20px 0;
 }
@@ -64,7 +64,7 @@ a {
 }
 
 .row-cols-md-3{
-  background-color: rgb(228, 250, 255);
+  background-image: url(b123.jpeg);
 }
 
 .search-form {
@@ -130,18 +130,7 @@ a {
 .btn-group{
   width: 30vw;
   justify-content: center;
-}
-
-/* フッター */
-
-.footer {
-  background-color: #999;
-  padding: 10px 0;
-}
-.copyright {
-  text-align: center;
-  color: #fff;
-  font-size: 10px;
+  background-color:aliceblue
 }
 
 /* タブレット対応 */
