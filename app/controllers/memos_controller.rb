@@ -40,7 +40,7 @@ class MemosController < ApplicationController
   end
 
   def search
-    @memos = Memo.search(params[:keyword])
+    @memos = Memo.search(params[:keyword]).page(params[:page]).per(20)
     render :index if params[:keyword] == ''
   end
 
