@@ -33,10 +33,10 @@ class MemosController < ApplicationController
 
   def destroy
     memo = Memo.find(params[:id])
-    if user_signed_in? && (current_user.id == memo.user_id)
-      memo.destroy
-      redirect_to root_path
-    end
+    return unless user_signed_in? && (current_user.id == memo.user_id)
+
+    memo.destroy
+    redirect_to root_path
   end
 
   def search
