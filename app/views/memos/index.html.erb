@@ -37,9 +37,11 @@
 
 <header>
   <% if user_signed_in? %>
-    <span>
-      ユーザー名:<%= current_user.nickname %>
-    </span>
+    <div class= "user-name">
+      <span>
+        ユーザー名 : <%= current_user.nickname %>
+      </span>
+    </div>
     <%= form_with(url: search_memos_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
       <%= form.submit "検索", class: "form__btn" %>

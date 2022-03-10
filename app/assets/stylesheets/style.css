@@ -67,6 +67,10 @@ a {
   background-image: url(b123.jpeg);
 }
 
+.user-name{
+  margin-left: 10px;
+}
+
 .search-form {
   padding-top: 32px;
   margin-left: 10px;
