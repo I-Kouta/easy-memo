@@ -1,10 +1,10 @@
 function star (){
   const starCheck  = document.getElementById("star-check");
   starCheck.addEventListener('click', function() {
-    if (starCheck.getAttribute("style") == "background-color:blue;") {
-      starCheck.removeAttribute("style", "background-color:blue;")
+    if (starCheck.getAttribute("style") == "color:#ff0000;") {
+      starCheck.removeAttribute("style", "color:#ff0000;")
     } else {
-      starCheck.setAttribute("style", "background-color:blue;")
+      starCheck.setAttribute("style", "color:#ff0000;")
     }
   })
 };
