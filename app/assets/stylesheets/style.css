@@ -137,6 +137,10 @@ a {
   background-color:aliceblue
 }
 
+.star-count {
+  font-size: 2vh;
+}
+
 /* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {
