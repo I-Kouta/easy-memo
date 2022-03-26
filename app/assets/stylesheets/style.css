@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-image: url(b006.gif);
+  background-image: url(b081.jpeg);
   margin-bottom: 48px;
   padding: 20px 0;
 }
@@ -64,7 +64,7 @@ a {
 }
 
 .row-cols-md-3{
-  background-image: url(b123.jpeg);
+  background-image: url(b081.jpeg);
 }
 
 .user-name{
@@ -102,6 +102,7 @@ a {
   border: 1px solid rgb(24, 19, 19);
   font-size: 16px;
   resize: none;
+  background-color: #f5fffa;
 }
 
 .actions{
@@ -116,7 +117,7 @@ a {
   color: black;
   text-decoration: none;
   user-select: none;
-  background: rgb(228, 250, 255);
+  background-image: url(b081.jpeg);
   border: 1px black solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(6, 216, 231, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
@@ -134,7 +135,7 @@ a {
 .btn-group{
   width: 30vw;
   justify-content: center;
-  background-color:aliceblue
+  background-image: url(b081.jpeg);
 }
 
 .star-check{
