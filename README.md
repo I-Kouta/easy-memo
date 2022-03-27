@@ -43,9 +43,7 @@ https://docs.google.com/spreadsheets/d/134-pvNJ8EpMJWEtg41QtllEGLCy-OBQCXLqi7b11
 
 
 # 実装予定の機能
-・新規登録、メモ投稿の際のエラーメッセージの日本語にする機能を実装中。
-
-・削除時の確認ダイアログは既に実装されており、この操作を行う結合テストコードを行う予定。
+・複数のキーワードで検索を行うことができるようにするための実装を進めている。
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/5881012fe60273c799da808dbcb26db4.png)](https://gyazo.com/5881012fe60273c799da808dbcb26db4)
@@ -69,6 +67,9 @@ https://docs.google.com/spreadsheets/d/134-pvNJ8EpMJWEtg41QtllEGLCy-OBQCXLqi7b11
 % git clone https://github.com/I-Kouta/easy-memo.git
 % bundle install
 % yarn install
+% rails db:create
+% rails db:migrate
+% rails s
 
 # 工夫したポイント
 ・これまで学んだことに加えて、不便に感じたことを今回の実装で実現しました。投稿した内容自体が本人にしか内容が表示されないことや、削除はワンクリックで行われず確認のダイアログが表示されるように実装を行いました。
