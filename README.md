@@ -43,7 +43,7 @@ https://docs.google.com/spreadsheets/d/134-pvNJ8EpMJWEtg41QtllEGLCy-OBQCXLqi7b11
 # 実装した機能についての説明
 ・新規メモを投稿する際にはトップページに表示されるタイトルと、具体的な内容のみを必須項目として実装を行った。
 
-[![Image from Gyazo](https://i.gyazo.com/b1c9d0ba36f78495ce88fc1315703780.png)](https://gyazo.com/b1c9d0ba36f78495ce88fc1315703780)
+[![Image from Gyazo](https://i.gyazo.com/80cb9269aa005f2120722e6ce627b52e.png)](https://gyazo.com/80cb9269aa005f2120722e6ce627b52e)
 
 
 # 実装予定の機能
