@@ -126,6 +126,28 @@ a {
   border-radius: 100vh;
 }
 
+.memo__btn{
+  position: relative;
+  padding: 1.5rem 2rem;
+  color: #000080;
+  border-radius: 10px;
+  background: #f0f8ff;
+  border: solid;
+  border-color: #e6e6fa;
+}
+
+.memo__btn:after{
+  position: absolute;
+  bottom: -9px;
+  left: 1em;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  border-color: #e6e6fa transparent transparent transparent;
+}
+
 /* メイン */
 .main{
   display: flex;
