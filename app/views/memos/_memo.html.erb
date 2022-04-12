@@ -5,9 +5,9 @@
       <div class="py-3">
         <div class="container">
           <div class="row-cols-md-3">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
-              <text x="50%" y="50%" fill="white" dy=".3em">
-                <%= memo.title_history%>
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#efffe0"/>
+              <text x="50%" y="50%" dy=".3em">
+                <%= link_to memo.title_history, edit_memo_path(memo.id) %>
               </text>
             </svg>
             <%# <span class='star-check' id="star-check">！！</span> %>
