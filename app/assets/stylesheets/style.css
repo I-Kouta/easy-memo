@@ -118,7 +118,7 @@ a {
   text-decoration: none;
   user-select: none;
   background-image: url(b081.jpeg);
-  border: 1px black solid;
+  border: 1px #fffafa solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(6, 216, 231, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -131,9 +131,9 @@ a {
   padding: 1.5rem 2rem;
   color: #000080;
   border-radius: 10px;
-  background: #f0f8ff;
+  background-image: url(b081.jpeg);
   border: solid;
-  border-color: #e6e6fa;
+  border-color: #fffafa;
 }
 
 .memo__btn:after{
@@ -145,7 +145,7 @@ a {
   content: '';
   border-width: 10px 10px 0 10px;
   border-style: solid;
-  border-color: #e6e6fa transparent transparent transparent;
+  border-color: #fffafa transparent transparent transparent;
 }
 
 /* メイン */
