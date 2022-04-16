@@ -131,9 +131,8 @@ a {
   padding: 1.5rem 2rem;
   color: #000080;
   border-radius: 10px;
-  background-image: url(b081.jpeg);
-  border: solid;
-  border-color: #fffafa;
+  background-color: #f0f8ff;
+  border: 1px #f0f8ff solid;
 }
 
 .memo__btn:after{
@@ -145,7 +144,7 @@ a {
   content: '';
   border-width: 10px 10px 0 10px;
   border-style: solid;
-  border-color: #fffafa transparent transparent transparent;
+  border-color: #f0f8ff transparent transparent transparent;
 }
 
 /* メイン */
