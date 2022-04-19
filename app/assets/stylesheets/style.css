@@ -128,23 +128,34 @@ a {
 
 .memo__btn{
   position: relative;
-  padding: 1.5rem 2rem;
-  color: #000080;
-  border-radius: 10px;
-  background-color: #f0f8ff;
-  border: 1px #f0f8ff solid;
+  margin-bottom: 2em;
+  padding: 1.5rem 3rem;
+  border-radius: 20px;
+  background: #f8f8ff;
+  border-bottom: 3px solid #e6e6fa;
 }
 
-.memo__btn:after{
+.memo__btn:before,
+.memo__btn:after {
   position: absolute;
-  bottom: -9px;
-  left: 1em;
-  width: 0;
-  height: 0;
   content: '';
-  border-width: 10px 10px 0 10px;
-  border-style: solid;
-  border-color: #f0f8ff transparent transparent transparent;
+  border-radius: 50%;
+  background: #f8f8ff;
+  border-bottom: 3px solid #e6e6fa;
+}
+
+.memo__btn:before {
+  bottom: -15px;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.memo__btn:after {
+  bottom: -30px;
+  left: 50px;
+  width: 15px;
+  height: 15px;
 }
 
 /* メイン */
