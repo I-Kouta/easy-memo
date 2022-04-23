@@ -132,7 +132,8 @@ a {
   padding: 1.5rem 3rem;
   border-radius: 20px;
   background: #f8f8ff;
-  border-bottom: 3px solid #e6e6fa;
+  -webkit-box-shadow: 5px 5px 0 #e6e6fa;
+  box-shadow: 5px 5px 0 #e6e6fa;
 }
 
 .memo__btn:before,
@@ -141,7 +142,8 @@ a {
   content: '';
   border-radius: 50%;
   background: #f8f8ff;
-  border-bottom: 3px solid #e6e6fa;
+  -webkit-box-shadow: 5px 5px 0 #e6e6fa;
+  box-shadow: 5px 5px 0 #e6e6fa;
 }
 
 .memo__btn:before {
