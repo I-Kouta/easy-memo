@@ -99,8 +99,8 @@ a {
   width: 80%;
   padding: 16px 16px 8px;
   border-radius: 4px;
-  border: 2px solid #b0c4de;
-  border-left: 6px double #b0c4de;
+  border-top: 3px double #b0c4de;
+  border-bottom: 3px double #b0c4de;
   font-size: 16px;
   resize: none;
   background-color: #f5fffa;
