@@ -41,17 +41,19 @@ a {
   margin-bottom: 48px;
   padding: 20px 0;
 }
+
 .inner {
   width: 1024px;
   margin: 0 auto;
 }
+
 .nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.nav__btn{
+.nav__btn {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -63,11 +65,11 @@ a {
   transition: 0.4s ease;
 }
 
-.row-cols-md-3{
+.row-cols-md-3 {
   background-image: url(b081.jpeg);
 }
 
-.user-name{
+.user-name {
   margin-left: 10px;
 }
 
@@ -78,11 +80,11 @@ a {
 
 .search-input {
   width: 20%;
-  margin:0 10px 40px 20px;
+  margin: 0 10px 40px 20px;
 }
 
 /* フォーム周り */
-.form__wrapper{
+.form__wrapper {
   min-height: calc(100vh - 161px);
 }
 
@@ -90,7 +92,7 @@ a {
   width: 50%;
 }
 
-.field{
+.field {
   margin: 5px 0;
   margin-left: 10%;
 }
@@ -108,12 +110,12 @@ a {
   box-shadow: 5px 5px 0 #e0ffff;
 }
 
-.actions{
+.actions {
   margin-bottom: 40px;
   margin-left: 10%;
 }
 
-.form__btn{
+.form__btn {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -129,7 +131,7 @@ a {
   border-radius: 100vh;
 }
 
-.memo__btn{
+.memo__btn {
   position: relative;
   margin-bottom: 2em;
   padding: 1.5rem 3rem;
@@ -164,19 +166,19 @@ a {
 }
 
 /* メイン */
-.main{
+.main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.btn-group{
+.btn-group {
   width: 30vw;
   justify-content: center;
   background-image: url(b081.jpeg);
 }
 
-.star-check{
+.star-check {
   font-size: 2.5vh;
 }
 
@@ -188,7 +190,7 @@ a {
   }
 }
 
- /* スマホ表示 */
+/* スマホ表示 */
 @media (max-width: 599px) {
   .logo {
     width: 120px;
